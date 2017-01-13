@@ -46,7 +46,8 @@ enum {
 typedef NS_ENUM(NSInteger, HMSegmentedControlType) {
     HMSegmentedControlTypeText,
     HMSegmentedControlTypeImages,
-	HMSegmentedControlTypeTextImages
+	HMSegmentedControlTypeTextImages,
+    HMSegmentedControlTypeFixed
 };
 
 @interface HMSegmentedControl : UIControl
@@ -129,6 +130,13 @@ typedef NS_ENUM(NSInteger, HMSegmentedControlType) {
  Default is `HMSegmentedControlTypeText`
  */
 @property (nonatomic, assign) HMSegmentedControlType type;
+
+/**
+ Specifies the style of the control
+ 
+ Default is `5`
+ */
+@property (nonatomic, assign) CGFloat widthFixedType;
 
 /**
  Specifies the style of the selection indicator.

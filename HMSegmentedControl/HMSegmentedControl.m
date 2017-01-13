@@ -145,6 +145,7 @@
     self.touchEnabled = YES;
     self.verticalDividerEnabled = NO;
     self.type = HMSegmentedControlTypeText;
+    self.widthFixedType = 5.0
     self.verticalDividerWidth = 1.0f;
     _verticalDividerColor = [UIColor blackColor];
     self.borderColor = [UIColor blackColor];
@@ -565,7 +566,9 @@
 		UIImage *sectionImage = [self.sectionImages objectAtIndex:self.selectedSegmentIndex];
 		CGFloat imageWidth = sectionImage.size.width;
         sectionWidth = MAX(stringWidth, imageWidth);
-	}
+    } else if (self.type == HMSegmentedControlTypeFixed) {
+        sectionWidth = widthFixedType
+    }
     
     if (self.selectionStyle == HMSegmentedControlSelectionStyleArrow) {
         CGFloat widthToEndOfSelectedSegment = (self.segmentWidth * self.selectedSegmentIndex) + self.segmentWidth;
